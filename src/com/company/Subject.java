@@ -54,6 +54,7 @@ public class Subject {
                             String data = myReader.nextLine();
                             subject.notifyObservers(data);
                         }
+                        Gmail.sendMail("EnterYourRecipientEmailHere");
                         myReader.close();
                     }else{
                         System.out.println("Cannot Find The File!");
@@ -62,6 +63,8 @@ public class Subject {
                 } catch (FileNotFoundException err) {
                     System.out.println("An error occurred.");
                     err.printStackTrace();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
                 }
             }
             k.reset();
